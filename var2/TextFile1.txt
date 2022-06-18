@@ -1,0 +1,12 @@
+﻿listViewManagers.Items.Clear();
+            foreach (ManagerSet managerSet in Program.var.ManagerSet)
+            {
+                ListViewItem item = new ListViewItem(new string[]
+                {
+                    managerSet.Id.ToString(), managerSet.LastName + " " + managerSet.FirstName,
+                    managerSet.Telephone, managerSet.Email, managerSet.Users.Login, managerSet.Type
+                });
+                item.Tag = managerSet;
+                listViewManagers.Items.Add(item);
+            }
+            listViewManagers.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
